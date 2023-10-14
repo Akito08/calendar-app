@@ -84,8 +84,8 @@ const App = () => {
             ログイン
           </Button>
           <Box textAlign="right">
-            <CLink color="blue.500">
-              <Link to="signUp">ユーザー登録はこちら</Link>
+            <CLink as={Link} to="signUp" color="blue.500">
+              ユーザー登録はこちら
             </CLink>
           </Box>
         </Box>

@@ -11,6 +11,8 @@ import {
 } from "../lib/api/calendarEvent";
 import { getUser } from "../lib/api/auth.js";
 import { useNavigate } from "react-router-dom";
+import axios from 'axios';
+import { signOut } from "../lib/api/auth.js";
 
 const Calendar = () => {
   const {
@@ -30,6 +32,12 @@ const Calendar = () => {
   const [updateEndDate, setEndDate] = useState("");
   const [eventId, setEventId] = useState("");
   const navigate = useNavigate();
+
+  const logout = async () => {
+    console.log("ログアウト関数が呼び出されました"); 
+      const response = await signOut();
+      navigate("/");
+  };
 
   const clearEvents = async () => {
     try {
@@ -138,6 +146,9 @@ const Calendar = () => {
             予定を追加
           </Button>
           <Image src="calendar-view.png" />
+          <Button w="80%" colorScheme="blue" onClick={logout}>
+            ログアウト
+          </Button>
         </Flex>
         <Box w="1200px">
           <FullCalendar

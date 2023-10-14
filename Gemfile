@@ -5,7 +5,7 @@ ruby "3.2.2"
 gem 'rack-cors'
 gem 'devise'
 gem 'devise_token_auth'
-
+gem "skylight"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.8"
 

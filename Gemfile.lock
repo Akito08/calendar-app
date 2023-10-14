@@ -168,6 +168,8 @@ GEM
     responders (3.1.0)
       actionpack (>= 5.2)
       railties (>= 5.2)
+    skylight (6.0.1)
+      activesupport (>= 5.2.0)
     sqlite3 (1.6.6-arm64-darwin)
     stringio (3.0.8)
     thor (1.2.2)
@@ -193,6 +195,7 @@ DEPENDENCIES
   puma (~> 5.0)
   rack-cors
   rails (~> 7.0.8)
+  skylight
   sqlite3 (~> 1.4)
   tzinfo-data
 

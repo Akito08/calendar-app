@@ -22,3 +22,22 @@ export const getUser = () => {
     },
   });
 };
+
+export const signOut = () => {
+  return client.delete("/auth/sessions", {
+    headers: {
+      "access-token": Cookies.get("_access_token"),
+      client: Cookies.get("_client"),
+      uid: Cookies.get("_uid"),
+    },
+  })
+  .then(response => {
+    if (response.status === 200) {
+      // サーバー側のログアウトが成功したらクッキーを削除する
+      Cookies.remove("_access_token");
+      Cookies.remove("_client");
+      Cookies.remove("_uid");
+    }
+    return response;
+  });
+};

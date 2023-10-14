@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   }
 
   namespace :auth do
-    resources :sessions, only: %i[index]
+    get 'sessions', to: 'sessions#index'
+    delete 'sessions', to: 'sessions#destroy'
   end
 
   #予定一覧
